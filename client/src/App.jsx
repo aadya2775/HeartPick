@@ -1,13 +1,12 @@
 import './App.css'
+import NavBar from './components/NavBar'
+import HeroSection from './components/HeroSection'
 
 function App() {
-
   return (
     <>
-  <div className='bg-red-500'>
-    <h1>Hello World</h1>
-  </div>
-
+      <NavBar />
+      <HeroSection />
     </>
   )
 }
