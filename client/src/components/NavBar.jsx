@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import WomenSection from "../pages/WomenSection";
+import MenSection from "../pages/MenSection";
+import HoliDaySection from "../pages/HoliDaySection";
+import KidSection from "../pages/KidSection";
+import BestSellerSection from "../pages/BestSellerSection";
 
 const navLinks = [
-  "OCASSION",
+  "OCASSION & HOLIDAYS",
   "MEN",
   "WOMEN",
   "KIDS",
-  "GENZ",
-  "HAMPER"
+  "NEW & BESTSELLERS",
 ];
 
 export default function NavBar() {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  let timeout;
+
+  const handleEnter = (link) => {
+    clearTimeout(timeout);
+    setActiveDropdown(link);
+  };
+  const handleLeave = () => {
+    timeout = setTimeout(() => setActiveDropdown(null), 150);
+  };
+
   return (
-    <nav className="flex justify-between items-center px-9 w-full h-16 font-sans bg-black/95 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.15)] sticky top-0 z-50 border-b border-gray-800">
+    <nav
+      className="flex justify-between items-center px-9 w-full h-16 font-sans bg-black/95 backdrop-blur-sm shadow-[0_4px_20px_rgba(0,0,0,0.15)] sticky top-0 z-50 border-b border-gray-800 relative"
+      onMouseLeave={handleLeave}
+    >
       {/* Logo */}
       <div className="flex items-center mr-12">
         <span className="text-2xl font-bold tracking-wider transition-all duration-300 hover:scale-105">
@@ -21,16 +39,14 @@ export default function NavBar() {
       </div>
 
       {/* Nav Links */}
-      <div className="flex gap-7">
+      <div className="flex gap-8">
         {navLinks.map((link) => (
           <span
             key={link}
-            className="relative text-base font-semibold tracking-wider text-white"
+            className="relative text-base font-semibold tracking-wider text-white cursor-pointer"
+            onMouseEnter={() => handleEnter(link)}
           >
             {link}
-            {link === "STUDIO" && (
-              <span className="ml-1 text-xs font-bold text-pink-500 align-top">NEW</span>
-            )}
           </span>
         ))}
       </div>
@@ -77,6 +93,22 @@ export default function NavBar() {
           <span>Bag</span>
         </div>
       </div>
+
+      {/* Dropdown Container */}
+      {activeDropdown && (activeDropdown === "MEN" || activeDropdown === "WOMEN" || activeDropdown === "OCASSION & HOLIDAYS" || 
+      activeDropdown==="KIDS" || activeDropdown==="NEW & BESTSELLERS") && (
+        <div
+          className="fixed left-0 right-0 top-16 z-40"
+          onMouseEnter={() => handleEnter(activeDropdown)}
+        >
+          {activeDropdown === "MEN" && <MenSection />}
+          {activeDropdown === "WOMEN" && <WomenSection />}
+          {activeDropdown === "OCASSION & HOLIDAYS" && <HoliDaySection />}
+          {activeDropdown === "KIDS" && <KidSection />}
+          {activeDropdown === "NEW & BESTSELLERS" && <BestSellerSection />}
+          {/* Add other sections here based on activeDropdown */}
+        </div>
+      )}
     </nav>
   );
 }
