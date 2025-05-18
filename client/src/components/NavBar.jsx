@@ -39,7 +39,7 @@ export default function NavBar() {
       </div>
 
       {/* Nav Links */}
-      <div className="flex gap-8">
+      <div className="flex gap-6">
         {navLinks.map((link) => (
           <span
             key={link}
