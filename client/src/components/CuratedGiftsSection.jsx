@@ -5,31 +5,32 @@ const giftCollections = [
   {
     id: 1,
     title: 'For Her',
-    image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: 'forHer.webp',
     buttonText: 'SHOP NOW',
     category: 'women'
   },
   {
     id: 2,
     title: 'For Him',
-    image: 'https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: 'forHim.webp',
     buttonText: 'SHOP NOW',
     category: 'men'
   },
   {
     id: 3,
     title: 'For Kids',
-    image: 'https://images.unsplash.com/photo-1580480055273-228ff5388ef8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: 'kids.jpg',
     buttonText: 'SHOP NOW',
     category: 'kids'
   },
   {
     id: 4,
     title: 'For Home',
-    image: 'https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: 'homedecore.jpg',
     buttonText: 'SHOP NOW',
     category: 'home'
   }
+  
 ];
 
 const CuratedGiftsSection = () => {
