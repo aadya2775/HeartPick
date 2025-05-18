@@ -52,7 +52,7 @@ export default function NavBar() {
       </div>
 
       {/* Search Bar */}
-      <div className="flex flex-1 justify-center mx-8">
+      <div className="flex justify-center flex-1 mx-8">
         <div className="flex items-center bg-gray-100 rounded w-[400px] h-10 px-3">
           {/* Search Icon */}
           <svg width="20" height="20" fill="none" stroke="#696e79" strokeWidth="2" viewBox="0 0 24 24">
@@ -62,13 +62,13 @@ export default function NavBar() {
           <input
             type="text"
             placeholder="Search for products, brands and more"
-            className="ml-2 w-full text-base placeholder-gray-500 text-gray-800 bg-transparent border-none outline-none"
+            className="w-full ml-2 text-base text-gray-800 placeholder-gray-500 bg-transparent border-none outline-none"
           />
         </div>
       </div>
 
       {/* Icons and Text */}
-      <div className="flex gap-8 items-center">
+      <div className="flex items-center gap-8">
         {/* Profile */}
         <div className="flex flex-col items-center text-sm font-semibold text-white">
           <svg width="24" height="24" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export default function NavBar() {
       {activeDropdown && (activeDropdown === "MEN" || activeDropdown === "WOMEN" || activeDropdown === "OCASSION & HOLIDAYS" || 
       activeDropdown==="KIDS" || activeDropdown==="NEW & BESTSELLERS") && (
         <div
-          className="fixed left-0 right-0 top-16 z-40"
+          className="fixed left-0 right-0 z-40 top-16"
           onMouseEnter={() => handleEnter(activeDropdown)}
         >
           {activeDropdown === "MEN" && <MenSection />}
