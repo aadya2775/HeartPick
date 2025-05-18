@@ -1,5 +1,29 @@
 import React from "react";
 
+// Format price to Indian Rupees
+const formatPrice = (price) => {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0
+  }).format(price);
+};
+
+const products = [
+  {
+    id: 1,
+    name: 'Colorful Cascading Name Mug',
+    price: 599,
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80'
+  },
+  {
+    id: 2,
+    name: 'Elegant Embroidered Personalized Lightweight Throw',
+    price: 1499,
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80'
+  }
+];
+
 export default function BestSellerSection() {
   return (
     <div className="w-full bg-black shadow-lg">
@@ -23,15 +47,20 @@ export default function BestSellerSection() {
           <span className="text-gray-400">Baby Swaddles</span>
         </div>
         <div className="border-l border-gray-700 mx-2"></div>
-        {/* Image 1 */}
-        <div className="flex flex-col items-center flex-shrink-0 min-w-[200px]">
-          <img
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80"
-            alt="Colorful Cascading Name Mug"
-            className="w-40 h-32 object-cover rounded mb-2"
-          />
-          <span className="text-gray-400 text-center text-sm">
-            Colorful Cascading Name Mug
+        {/* Product 1 */}
+        <div className="flex flex-col items-center flex-shrink-0 min-w-[200px] group">
+          <div className="relative w-40 h-32 mb-2 overflow-hidden rounded">
+            <img
+              src={products[0].image}
+              alt={products[0].name}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <span className="text-gray-300 text-center text-sm font-medium mb-1">
+            {products[0].name}
+          </span>
+          <span className="text-amber-400 font-medium">
+            {formatPrice(products[0].price)}
           </span>
         </div>
         <div className="border-l border-gray-700 mx-2"></div>
@@ -46,15 +75,20 @@ export default function BestSellerSection() {
           <span className="text-gray-400">Beach Towels</span>
         </div>
         <div className="border-l border-gray-700 mx-2"></div>
-        {/* Image 2 */}
-        <div className="flex flex-col items-center flex-shrink-0 min-w-[200px]">
-          <img
-            src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80"
-            alt="Elegant Embroidered Personalized Lightweight Throw"
-            className="w-40 h-32 object-cover rounded mb-2"
-          />
-          <span className="text-gray-400 text-center text-sm">
-            Elegant Embroidered Personalized Lightweight Throw
+        {/* Product 2 */}
+        <div className="flex flex-col items-center flex-shrink-0 min-w-[200px] group">
+          <div className="relative w-40 h-32 mb-2 overflow-hidden rounded">
+            <img
+              src={products[1].image}
+              alt={products[1].name}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <span className="text-gray-300 text-center text-sm font-medium mb-1">
+            {products[1].name}
+          </span>
+          <span className="text-amber-400 font-medium">
+            {formatPrice(products[1].price)}
           </span>
         </div>
          <div className="border-l border-gray-700 mx-2"></div>
