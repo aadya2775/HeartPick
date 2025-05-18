@@ -1,12 +1,20 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+
+// Format price to Indian Rupees
+const formatPrice = (price) => {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0
+  }).format(price);
+};
 
 const products = [
   {
     id: 1,
     name: 'Wireless Earbuds',
-    price: 99.99,
-    originalPrice: 129.99,
+    price: 8299,
+    originalPrice: 10799,
     discount: 23,
     rating: 4.5,
     image: 'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
@@ -16,8 +24,8 @@ const products = [
   {
     id: 2,
     name: 'Smart Watch Pro',
-    price: 199.99,
-    originalPrice: 249.99,
+    price: 19999,
+    originalPrice: 24999,
     discount: 20,
     rating: 4.7,
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
@@ -27,30 +35,30 @@ const products = [
   {
     id: 3,
     name: 'Bluetooth Speaker',
-    price: 79.99,
-    originalPrice: 99.99,
+    price: 7999,
+    originalPrice: 9999,
     discount: 20,
     rating: 4.3,
-    image: 'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+    image: 'https://5.imimg.com/data5/SELLER/Default/2023/1/LS/XW/DD/8268091/untitled-design-30--500x500.png',
     isNew: false,
     isBestSeller: true
   },
   {
     id: 4,
     name: 'Wireless Charger',
-    price: 29.99,
-    originalPrice: 39.99,
+    price: 2999,
+    originalPrice: 3999,
     discount: 25,
     rating: 4.1,
-    image: 'https://images.unsplash.com/photo-1580913428735-bd3c269d6a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+    image: 'https://honeywellconnection.com/in/wp-content/uploads/2024/08/main-image-4.jpg',
     isNew: false,
     isBestSeller: true
   },
   {
     id: 5,
     name: 'Smartphone Stand',
-    price: 19.99,
-    originalPrice: 24.99,
+    price: 1999,
+    originalPrice: 2499,
     discount: 20,
     rating: 4.0,
     image: 'https://images.unsplash.com/photo-1580913428735-bd3c269d6a82?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
@@ -60,19 +68,19 @@ const products = [
   {
     id: 6,
     name: 'Portable SSD 1TB',
-    price: 129.99,
-    originalPrice: 149.99,
+    price: 12999,
+    originalPrice: 14999,
     discount: 13,
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1593642702821-8a615648e970?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+    image: 'https://poojaelectronics.in/storage/2023/07/Samsung-1TB-T7-Portable-SSD-1050-MBs-Blue-Online-Buy-India_02.jpg',
     isNew: false,
     isBestSeller: true
   },
   {
     id: 7,
     name: 'Wireless Keyboard',
-    price: 59.99,
-    originalPrice: 79.99,
+    price: 5999,
+    originalPrice: 7999,
     discount: 25,
     rating: 4.4,
     image: 'https://images.unsplash.com/photo-1593642702821-8a615648e970?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
@@ -82,8 +90,8 @@ const products = [
   {
     id: 8,
     name: 'Noise Cancelling Headphones',
-    price: 179.99,
-    originalPrice: 229.99,
+    price: 17999,
+    originalPrice: 22999,
     discount: 22,
     rating: 4.6,
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
@@ -223,11 +231,11 @@ const BestSellersSection = () => {
                 </div>
                 <div className="flex items-center">
                   <span className="text-lg font-bold text-gray-900">
-                    ${product.price.toFixed(2)}
+                    {formatPrice(product.price)}
                   </span>
                   {product.originalPrice > product.price && (
                     <span className="ml-2 text-sm text-gray-500 line-through">
-                      ${product.originalPrice.toFixed(2)}
+                      {formatPrice(product.originalPrice)}
                     </span>
                   )}
                 </div>
