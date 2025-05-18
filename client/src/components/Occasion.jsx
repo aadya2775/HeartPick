@@ -7,21 +7,21 @@ const Occasion = () => {
       id: 1,
       title: 'BIRTHDAY',
       subtitle: 'CELEBRATE THEIR SPECIAL DAY',
-      image: 'https://images.unsplash.com/photo-1530103862676-de81c4ff430?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      image: 'https://i5.walmartimages.com/seo/SFBOSF-pink-birthday-Party-Decoration-Kits_dcdf7ca5-4f5d-4916-b7a3-583408674426.29f43545c92dde2c8b8994574b81e3bb.jpeg',
       buttonText: 'SHOP NOW'
     },
     {
       id: 2,
       title: 'ANNIVERSARY',
       subtitle: 'CELEBRATE YEARS TOGETHER',
-      image: 'https://images.unsplash.com/photo-1523438885200-eeb9a12f9e71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80',
+      image: 'https://rukminim3.flixcart.com/image/850/1000/xif0q/wall-decoration/w/j/w/couples-wedding-or-anniversary-gift-for-every-special-occasion-1-original-imagzy8ggh6ykvk7.jpeg?q=90&crop=false',
       buttonText: 'SHOP NOW'
     },
     {
       id: 3,
       title: 'THANK YOU',
       subtitle: 'SHOW YOUR APPRECIATION',
-      image: 'https://images.unsplash.com/photo-1527481138389-2a1f3fcc9d6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      image: 'https://goodwishes.com/wp-content/uploads/2024/02/A-Vibrant-Display-of-Trending-Thank-You-Message-1024x614-1.jpg',
       buttonText: 'SHOP NOW'
     },
     {
